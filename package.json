@@ -1,0 +1,29 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmeddoosama/e-commerce.git"
+  },
+  "author": "Ahmed Osama Bedawy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmeddoosama/e-commerce/issues"
+  },
+  "homepage": "https://github.com/ahmeddoosama/e-commerce#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^5.0.0"
+  }
+}
