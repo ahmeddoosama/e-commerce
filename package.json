@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "tailwind build src/sass/vendors/teilwind.css -o assets/css/vendors/teilwind.css"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,7 @@
     "gulp-watch": "^5.0.1",
     "node-sass": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tailwindcss": "^2.0.2"
+  }
 }
