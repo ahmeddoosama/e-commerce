@@ -2,3 +2,246 @@
 Name: 			style.scss
 Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
 */
+/* Responsive */
+/***
+*
+====================================================================
+    Global Settings
+====================================================================
+*
+***/
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+}
+
+a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.paragraph {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.start {
+  text-align: start;
+}
+
+.end {
+  text-align: end;
+}
+
+/* ========== Contain Button style ========== */
+/* Responsive */
+/* ========== Button ========== */
+.btn {
+  border: none;
+  background: none;
+  line-height: 1;
+  padding: 0;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+/* ========== Contain Forms style ========== */
+/* Responsive */
+/* ========== Forms ========== */
+input, textarea {
+  padding: 10px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+/* ========== Contain Header style ========== */
+/* Responsive */
+/* ========== Header ========== */
+header {
+  padding: 20px 0;
+  color: #a4abae;
+  font-size: 12px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .header__logo {
+  width: 100px;
+  margin-right: 20px;
+}
+
+header .list-holder {
+  position: relative;
+}
+
+header .list-holder .selected-item .icon {
+  margin-left: 5px;
+  vertical-align: top;
+}
+
+header .list-holder .list-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  padding: 5px 0;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #CCC;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+}
+
+header .list-holder .list-items .list-item a {
+  display: block;
+  padding: 2px 8px 1px;
+}
+
+header .list-holder .list-items .list-item a:hover {
+  background-color: #CCC;
+  color: #FFF;
+}
+
+header .list-holder .list-items .list-item.active a {
+  background-color: #CCC;
+  color: #FFF;
+}
+
+header .list-holder.header__lang__dropdown, header .list-holder.header__currency__dropdown {
+  margin-right: 20px;
+}
+
+header .list-holder:hover .list-items {
+  opacity: 1;
+  visibility: visible;
+}
+
+header .header__search {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+}
+
+header .header__search input {
+  width: 100%;
+  border: 1px solid #CCC;
+  height: 45px;
+  line-height: 25px;
+  padding-right: 35px;
+}
+
+header .header__search .submit-btn {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  color: #333;
+}
+
+header .header__right__side {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  right: 20%;
+}
+
+header .header__right__side .header__signin-btn,
+header .header__right__side .header__card {
+  margin-right: 20px;
+}
+
+header .header__right__side .header__other__links {
+  color: #333;
+  font-size: 18px;
+}
+
+header .header__right__side .header__card .icon {
+  color: #333;
+  font-size: 18px;
+}
+
+header .header__right__side .header__card .card-content {
+  position: absolute;
+  top: 140%;
+  right: 6px;
+  padding: 10px;
+  display: none;
+  width: 250px;
+  background-color: #FFF;
+  border: 1px solid #eee;
+}
+
+header .header__right__side .header__card .card-content::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 24px;
+  border-bottom: 10px solid #FFF;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+header .header__right__side .header__card .card-content::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  right: 24px;
+  margin-bottom: 1px;
+  border-bottom: 11px solid #eee;
+  border-right: 11px solid transparent;
+  border-left: 11px solid transparent;
+}
+
+header .header__right__side .header__card:hover .card-content {
+  display: block;
+}

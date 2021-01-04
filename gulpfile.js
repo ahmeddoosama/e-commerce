@@ -51,9 +51,10 @@ gulp.task('pug', () => {
     > JSconact Task
 **/
 gulp.task('JSconact', () => {
-    return gulp.src(['./src/js/vendors/*.js', 'src/js/partiails/*.js'])
+    return gulp.src(['src/js/partiails/*.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('./assets/js'))
+    .pipe(connect.reload())
 });
 
 /**
