@@ -2,7 +2,15 @@
 Name: 			style.scss
 Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
 */
+.black {
+  color: #000;
+}
+
 /* Responsive */
+.black {
+  color: #000;
+}
+
 /***
 *
 ====================================================================
@@ -71,22 +79,83 @@ a:hover, a:focus {
   text-align: end;
 }
 
+.act-table {
+  display: table;
+}
+
+.act-table-cell {
+  display: table-cell;
+}
+
+.vertical-center {
+  vertical-align: middle;
+}
+
+.vertical-top {
+  vertical-align: top;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
 /* ========== Contain Button style ========== */
+.black {
+  color: #000;
+}
+
 /* Responsive */
+.black {
+  color: #000;
+}
+
 /* ========== Button ========== */
 .btn {
   border: none;
   background: none;
   line-height: 1;
+  border-radius: 0;
   padding: 0;
+  text-align: center;
+  display: inline-block;
 }
 
-.btn:focus {
+.btn:hover, .btn:focus {
+  outline: none;
   box-shadow: none;
+  opacity: 0.9;
+  color: #FFF;
+}
+
+.btn-cart {
+  width: 100%;
+  background-color: #DC9831;
+  color: #FFF;
+  padding: 10px;
+}
+
+.toggle-search-btn {
+  color: #a4abae;
+}
+
+.toggle-search-btn:hover, .toggle-search-btn:focus {
+  color: #333;
 }
 
 /* ========== Contain Forms style ========== */
+.black {
+  color: #000;
+}
+
 /* Responsive */
+.black {
+  color: #000;
+}
+
 /* ========== Forms ========== */
 input, textarea {
   padding: 10px;
@@ -97,7 +166,15 @@ input:focus, textarea:focus {
 }
 
 /* ========== Contain Header style ========== */
+.black {
+  color: #000;
+}
+
 /* Responsive */
+.black {
+  color: #000;
+}
+
 /* ========== Header ========== */
 header {
   padding: 20px 0;
@@ -171,6 +248,10 @@ header .header__search {
   margin-left: -250px;
 }
 
+header .header__search .toggle-search {
+  display: none;
+}
+
 header .header__search input {
   width: 100%;
   border: 1px solid #CCC;
@@ -194,21 +275,31 @@ header .header__right__side {
 }
 
 header .header__right__side .header__signin-btn,
-header .header__right__side .header__card {
+header .header__right__side .header__cart {
   margin-right: 20px;
 }
 
-header .header__right__side .header__other__links {
+header .header__right__side .header__other__links .icon {
   color: #333;
   font-size: 18px;
 }
 
-header .header__right__side .header__card .icon {
+header .header__right__side .header__cart .cart-count {
+  position: absolute;
+  top: -4px;
+  right: 27px;
+  color: #DC9831;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+header .header__right__side .header__cart .icon {
   color: #333;
   font-size: 18px;
 }
 
-header .header__right__side .header__card .card-content {
+header .header__right__side .header__cart .cart-content {
   position: absolute;
   top: 140%;
   right: 6px;
@@ -219,7 +310,84 @@ header .header__right__side .header__card .card-content {
   border: 1px solid #eee;
 }
 
-header .header__right__side .header__card .card-content::after {
+header .header__right__side .header__cart .cart-content .no-content {
+  display: none;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item {
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item:last-child {
+  margin-bottom: 0;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-img-cell {
+  width: 78px;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell {
+  padding-left: 10px;
+  padding-top: 10px;
+  position: relative;
+  text-align: start;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .item-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #a4abae;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .item-title:hover {
+  color: #333;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .paragraph {
+  color: #333;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .paragraph .space {
+  margin: 0 5px;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .close-btn .icon {
+  font-size: 12px;
+  color: #a4abae;
+}
+
+header .header__right__side .header__cart .cart-content .cart-items .items-list .item .item-content-cell .close-btn .icon:hover {
+  color: #333;
+}
+
+header .header__right__side .header__cart .cart-content .cart-footer {
+  padding-top: 10px;
+}
+
+header .header__right__side .header__cart .cart-content .cart-footer .cart-total {
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header .header__right__side .header__cart .cart-content .cart-footer .action:first-child {
+  padding-right: 5px;
+}
+
+header .header__right__side .header__cart .cart-content::after {
   content: '';
   display: block;
   position: absolute;
@@ -230,7 +398,7 @@ header .header__right__side .header__card .card-content::after {
   border-left: 10px solid transparent;
 }
 
-header .header__right__side .header__card .card-content::before {
+header .header__right__side .header__cart .cart-content::before {
   content: '';
   display: block;
   position: absolute;
@@ -242,6 +410,111 @@ header .header__right__side .header__card .card-content::before {
   border-left: 11px solid transparent;
 }
 
-header .header__right__side .header__card:hover .card-content {
+header .header__right__side .header__cart:hover .cart-content {
   display: block;
+}
+
+header .header__right__side .header__other__links .list-items {
+  width: 100px;
+  left: auto;
+  right: -10px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  header {
+    padding: 50px 0;
+  }
+  header .container > .header__currency__dropdown,
+  header .container > .header__lang__dropdown {
+    display: none;
+  }
+  header .header__search {
+    position: relative;
+    top: 0;
+    left: 65%;
+    width: auto;
+    margin-left: 0;
+  }
+  header .header__search .toggle-search {
+    display: block;
+  }
+  header .header__search form {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    margin-top: 10px;
+  }
+  header .header__search form::before {
+    content: '';
+    display: block;
+    border-bottom: 10px solid #CCC;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    bottom: 100%;
+    right: 5px;
+  }
+  header .header__search form::after {
+    content: '';
+    display: block;
+    border-bottom: 10px solid #FFF;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    bottom: 100%;
+    right: 5px;
+    margin-bottom: -1px;
+  }
+  header .header__search.active form {
+    display: block;
+  }
+  header .header__right__side {
+    right: 10%;
+  }
+}
+
+/* ========== Contain Navbar style ========== */
+.black {
+  color: #000;
+}
+
+/* Responsive */
+.black {
+  color: #000;
+}
+
+/* ========== Navbar ========== */
+.small-nav {
+  width: 100%;
+  background-color: #262634;
+  display: none;
+}
+
+.small-nav .container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-nav .nav__left__side,
+.small-nav .nav__right__side .list-items {
+  display: flex;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .small-nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+  }
+  .small-nav .nav__right__side .selected-item {
+    display: none;
+  }
+  .small-nav .nav__right__side .list-items .list-item:not(:last-child) {
+    margin-right: 15px;
+  }
 }

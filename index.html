@@ -13,6 +13,7 @@
     <title>Home</title>
     <!-- Goggle Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&amp;display=swap">
     <!-- CSS Vendors-->
     <link rel="stylesheet" href="assets/css/vendors/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -46,26 +47,93 @@
             <li class="list-item"><a href="#">FRANCH</a></li>
           </ul>
         </div>
-        <div class="header__search">
+        <div class="header__search click-outside">
+          <button class="toggle-search-btn btn toggle-active-parent" type="button"><span class="icon fa fa-search"></span></button>
           <form class="search-form" action="">
             <input type="text" placeholder="SEARCH">
             <button class="btn submit-btn" type="submit"><span class="icon fa fa-search"></span></button>
           </form>
         </div>
         <div class="header__right__side"><a class="header__signin-btn" href="#">SIGN IN</a>
-          <div class="header__card"><a href="#"><span class="icon fa fa-shopping-cart"></span></a>
-            <div class="card-content center">
+          <div class="header__cart"><a href="#"><span class="cart-count">0</span><span class="icon fa fa-shopping-cart"></span></a>
+            <div class="cart-content center">
               <p class="paragraph no-content">You have no items in your shopping cart.</p>
+              <div class="cart-items">
+                <ul class="items-list">
+                  <li class="item act-table">
+                    <div class="item-img-cell act-table-cell img-ratio vertical-top">
+                      <div class="ratio"></div><a class="ratio-inner cart-item" href="#"><img class="item-img" src="assets/images/products/img-1.jpg" alt="item" draggable="false"></a>
+                    </div>
+                    <div class="item-content-cell act-table-cell vertical-top">
+                      <h4 class="item-title"><a href="#">Basket</a></h4>
+                      <p class="paragraph"><span class="item-count">1</span><span class="space">x</span><span class="item-price">$10.00</span></p>
+                      <button class="btn close-btn" type="button"><span class="icon fa fa-times"></span></button>
+                    </div>
+                  </li>
+                  <li class="item act-table">
+                    <div class="item-img-cell act-table-cell img-ratio vertical-top">
+                      <div class="ratio"></div><a class="ratio-inner cart-item" href="#"><img class="item-img" src="assets/images/products/img-1.jpg" alt="item" draggable="false"></a>
+                    </div>
+                    <div class="item-content-cell act-table-cell vertical-top">
+                      <h4 class="item-title"><a href="#">Basket</a></h4>
+                      <p class="paragraph"><span class="item-count">1</span><span class="space">x</span><span class="item-price">$10.00</span></p>
+                      <button class="btn close-btn" type="button"><span class="icon fa fa-times"></span></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cart-footer">
+                <p class="paragraph cart-total">TOTAL :<span class="black">$60.00</span></p>
+                <div class="cart-actions">
+                  <div class="row margin-0">
+                    <div class="action col-6 padding-0"><a class="btn btn-cart" href="#">View Cart</a></div>
+                    <div class="action col-6 padding-0"><a class="btn btn-cart" href="#">Checkout</a></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="header__other__links list-holder"><span class="icon fa fa-bars"></span>
             <ul class="list-items">
-              <li><a href="#">Daily deal</a></li>
-              <li><a href="#">Blog</a></li>
+              <li class="list-item"><a href="#">Daily deal</a></li>
+              <li class="list-item"><a href="#">Blog</a></li>
             </ul>
           </div>
         </div>
       </div>
+      <!-- Small Screen View-->
+      <nav class="small-nav">
+        <div class="container-fluid">
+          <div class="nav__left__side">
+            <div class="header__currency__dropdown list-holder select">
+              <div class="selected-item"><span class="item-text"></span><span class="icon fa fa-sort-down"></span></div>
+              <ul class="list-items">
+                <li class="list-item"><a href="#">USD</a></li>
+                <li class="list-item"><a href="#">EUR</a></li>
+                <li class="list-item"><a href="#">EG</a></li>
+              </ul>
+            </div>
+            <div class="header__lang__dropdown list-holder select">
+              <div class="selected-item"><span class="item-text"></span><span class="icon fa fa-sort-down"></span></div>
+              <ul class="list-items">
+                <li class="list-item"><a href="#">ENG</a></li>
+                <li class="list-item"><a href="#">ARB</a></li>
+                <li class="list-item"><a href="#">FRANCH</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav__right__side">
+            <div class="dropDown-menu dropdown-links">
+              <div class="selected-item"><span class="item-text">Links</span><span class="icon fa fa-sort-down"></span></div>
+              <ul class="list-items">
+                <li class="list-item"><a href="#">Sign In</a></li>
+                <li class="list-item"><a href="#">Daily deal</a></li>
+                <li class="list-item"><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- Vendors JS-->
     <script src="assets/js/vendors/jquery-3.5.1.min.js"></script>

@@ -21,4 +21,22 @@ function dropDownSelect() {
 if(dropDown.length) {
     dropDownSelect()
 }
+// Show search bar when click on search icon
+$(document).on('click', '.toggle-active-parent', function() {
+    $(this).parent().toggleClass('active')
+})
+
+$(document).on('click', function(event){
+    let $target = $(event.target)
+
+    $('.click-outside').each(function(index){
+        let $this = $(this)
+        if($this.hasClass('active') && $target.closest('.click-outside').length == 0){
+            $this.removeClass('active')
+        }
+    })
+})
+
+
+
 });
