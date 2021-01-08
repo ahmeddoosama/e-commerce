@@ -473,6 +473,28 @@ header .header__right__side .header__other__links .list-items {
   header .header__right__side {
     right: 10%;
   }
+  header .header__right__side .header__signin-btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header .header__search {
+    left: 35%;
+  }
+  header .header__search form {
+    width: 180px;
+    right: -50px;
+  }
+  header .header__search form::before {
+    right: 45px;
+  }
+  header .header__search form::after {
+    right: 45px;
+  }
+  header .header__right__side {
+    right: 7%;
+  }
 }
 
 /* ========== Contain Navbar style ========== */
