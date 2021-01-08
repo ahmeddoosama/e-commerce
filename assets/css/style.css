@@ -248,7 +248,7 @@ header .header__search {
   margin-left: -250px;
 }
 
-header .header__search .toggle-search {
+header .header__search .toggle-search-btn {
   display: none;
 }
 
@@ -435,7 +435,7 @@ header .header__right__side .header__other__links .list-items {
     width: auto;
     margin-left: 0;
   }
-  header .header__search .toggle-search {
+  header .header__search .toggle-search-btn {
     display: block;
   }
   header .header__search form {
