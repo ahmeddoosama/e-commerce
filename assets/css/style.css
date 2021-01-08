@@ -420,7 +420,7 @@ header .header__right__side .header__other__links .list-items {
   right: -10px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   header {
     padding: 50px 0;
   }
@@ -502,7 +502,7 @@ header .header__right__side .header__other__links .list-items {
   display: flex;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .small-nav {
     display: block;
     position: absolute;
