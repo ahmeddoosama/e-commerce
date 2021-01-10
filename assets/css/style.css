@@ -106,6 +106,7 @@ a:hover, a:focus {
 h1, h2, h3, h4, h5, h6 {
   font-style: "Poppins", sans-serif;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 /* ========== Contain Button style ========== */
@@ -133,7 +134,6 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   box-shadow: none;
   opacity: 0.9;
-  color: #FFF;
 }
 
 .btn-cart {
@@ -170,7 +170,7 @@ input:focus, textarea:focus {
   outline: none;
 }
 
-/* ========== Contain Sidebar style ========== */
+/* ========== Contain Accordion style ========== */
 .black {
   color: #000;
 }
@@ -180,15 +180,118 @@ input:focus, textarea:focus {
   color: #000;
 }
 
-/* ========== Sidebar ========== */
-.sidebar {
-  background-color: #f8f8f8;
-  padding: 20px 30px;
+/* ========== Accordion ========== */
+.accordion .accordion__container .accordion__item:not(:last-child) {
+  margin-bottom: 20px;
 }
 
-.sidebar .sidebar__header .sidebar__header__title {
-  margin-top: 0;
-  margin-bottom: 20px;
+.accordion .accordion__container .accordion__item {
+  position: relative;
+}
+
+.accordion .accordion__container .accordion__item .accordion__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: .7;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.accordion .accordion__container .accordion__item .accordion__btn .icon-minus {
+  display: none;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title {
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title .status {
+  position: relative;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  padding: 0 4px;
+  background-color: #000;
+  color: #FFF;
+  border-radius: 2px;
+  font-size: 8px;
+  line-height: 14px;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title .status::before {
+  content: '';
+  border-right: 4px solid #000;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -4px;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title .status.red {
+  background-color: #eb2771;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title .status.red::before {
+  border-right: 4px solid #eb2771;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title .status.green {
+  background-color: #0cc485;
+}
+
+.accordion .accordion__container .accordion__item .accordion__header .accordion__title .status.green::before {
+  border-right: 4px solid #0cc485;
+}
+
+.accordion .accordion__container .accordion__item .accordion__body {
+  padding-left: 15px;
+  display: none;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+
+.accordion .accordion__container .accordion__item .accordion__body .list-items .list-item {
+  margin-bottom: 15px;
+}
+
+.accordion .accordion__container .accordion__item .accordion__body .list-items .list-item::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 5px solid #535360;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-right: 6px;
+  opacity: 0.5;
+}
+
+.accordion .accordion__container .accordion__item .accordion__body .list-items .list-item:hover::before {
+  opacity: 1;
+}
+
+.accordion .accordion__container .accordion__item.active .accordion__btn .icon-plus {
+  display: none;
+}
+
+.accordion .accordion__container .accordion__item.active .accordion__btn .icon-minus {
+  display: block;
+}
+
+.accordion .accordion__container .accordion__item.active .accordion__body {
+  transition: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.accordion .accordion__container .accordion__item:hover .accordion__btn {
+  opacity: 1;
 }
 
 /* ========== Contain Header style ========== */
@@ -565,4 +668,26 @@ input:focus, textarea:focus {
   .small-nav .nav__right__side .list-items .list-item:not(:last-child) {
     margin-right: 15px;
   }
+}
+
+/* ========== Contain Sidebar style ========== */
+.black {
+  color: #000;
+}
+
+/* Responsive */
+.black {
+  color: #000;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  background-color: #f8f8f8;
+  padding: 20px 30px;
+}
+
+.sidebar .sidebar__header .sidebar__header__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
 }

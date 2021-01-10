@@ -23,7 +23,13 @@ if(dropDown.length) {
 }
 // Show search bar when click on search icon
 $(document).on('click', '.toggle-active-parent', function() {
-    $(this).parent().toggleClass('active')
+    let $this = $(this)
+    $this.parent().toggleClass('active')
+
+    if($this.parent('.accordion__item').length){
+        $this.parent().siblings().removeClass('active').find('.accordion__body').slideUp();
+        $this.parent().find('.accordion__body').slideToggle(300);
+    }
 })
 
 $(document).on('click', function(event){
@@ -36,7 +42,6 @@ $(document).on('click', function(event){
         }
     })
 })
-
 
 
 });
