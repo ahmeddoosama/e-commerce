@@ -143,12 +143,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px;
 }
 
-.toggle-search-btn {
-  color: #a4abae;
+.btn-cart:hover, .btn-cart:focus {
+  color: #FFF;
 }
 
-.toggle-search-btn:hover, .toggle-search-btn:focus {
-  color: #333;
+.toggle-search-btn {
+  color: #a4abae;
 }
 
 /* ========== Contain Forms style ========== */
@@ -292,6 +292,18 @@ input:focus, textarea:focus {
 
 .accordion .accordion__container .accordion__item:hover .accordion__btn {
   opacity: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  .accordion .accordion__container .accordion__item {
+    color: #FFF;
+  }
+  .accordion .accordion__container .accordion__item .accordion__btn {
+    color: inherit;
+  }
+  .accordion .accordion__container .accordion__item .accordion__body .list-items .list-item::before {
+    border-left: 5px solid #FFF;
+  }
 }
 
 /* ========== Contain Header style ========== */
@@ -602,7 +614,8 @@ input:focus, textarea:focus {
   .main-header .header__right__side {
     right: 10%;
   }
-  .main-header .header__right__side .header__signin-btn {
+  .main-header .header__right__side .header__signin-btn,
+  .main-header .header__right__side .header__other__links {
     display: none;
   }
 }
@@ -690,4 +703,34 @@ input:focus, textarea:focus {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 18px;
+}
+
+/* category sidebar */
+@media only screen and (max-width: 991px) {
+  .category-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px;
+    width: 250px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #151515;
+    padding: 25px;
+  }
+  .category-sidebar::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .category-sidebar .sidebar__header {
+    display: none;
+  }
 }
