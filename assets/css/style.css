@@ -561,6 +561,10 @@ input:focus, textarea:focus {
   right: -10px;
 }
 
+.main-header .header__right__side .category-slider-btn {
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
   .main-header {
     padding: 50px 0;
@@ -617,6 +621,9 @@ input:focus, textarea:focus {
   .main-header .header__right__side .header__signin-btn,
   .main-header .header__right__side .header__other__links {
     display: none;
+  }
+  .main-header .header__right__side .category-slider-btn {
+    display: block;
   }
 }
 
@@ -717,9 +724,9 @@ input:focus, textarea:focus {
     overflow-y: scroll;
     background-color: #151515;
     padding: 25px;
+    transition: left 0.5s;
   }
-  .category-sidebar::before {
-    content: '';
+  .category-sidebar .overlay {
     display: block;
     position: fixed;
     top: 0;
@@ -732,5 +739,12 @@ input:focus, textarea:focus {
   }
   .category-sidebar .sidebar__header {
     display: none;
+  }
+  .category-sidebar.active {
+    left: 0;
+  }
+  .category-sidebar.active .overlay {
+    opacity: 1;
+    visibility: visible;
   }
 }

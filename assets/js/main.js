@@ -37,11 +37,17 @@ $(document).on('click', function(event){
 
     $('.click-outside').each(function(index){
         let $this = $(this)
-        if($this.hasClass('active') && $target.closest('.click-outside').length == 0){
-            $this.removeClass('active')
+
+        let hasClass = $this.hasClass('remove-from-parent') ? $this.parent().hasClass('active') : $this.hasClass('active')
+
+        if(hasClass &&  $target.closest('.click-outside').length == 0 && !$target.hasClass('click-outside-btn')) {
+            $this.hasClass('remove-from-parent') ? $this.parent().removeClass('active') : $this.removeClass('active')
         }
     })
 })
 
 
+$(document).on('click', '.category-slider-btn', function(){
+    $('.category-sidebar').addClass('active')
+})
 });
