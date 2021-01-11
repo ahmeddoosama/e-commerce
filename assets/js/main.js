@@ -41,13 +41,13 @@ $(document).on('click', function(event){
         let hasClass = $this.hasClass('remove-from-parent') ? $this.parent().hasClass('active') : $this.hasClass('active')
 
         if(hasClass &&  $target.closest('.click-outside').length == 0 && !$target.hasClass('click-outside-btn')) {
-            $this.hasClass('remove-from-parent') ? $this.parent().removeClass('active') : $this.removeClass('active')
+            $this.hasClass('remove-from-parent') ? $this.parent().removeClass('active').parents('body').removeClass('sidebar-opened') : $this.removeClass('active')
         }
     })
 })
 
 
 $(document).on('click', '.category-slider-btn', function(){
-    $('.category-sidebar').addClass('active')
+    $('.category-sidebar').addClass('active').parents('body').addClass('sidebar-opened')
 })
 });
