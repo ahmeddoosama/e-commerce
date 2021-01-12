@@ -5,6 +5,7 @@
         // Default Options
         options = $.extend({
             slidesToShow: 1,
+            autoPlay: true,
             waitingTime: 3000,
             arrows: true,
             dots: false
@@ -43,11 +44,16 @@
         slideObj.nextBtn.click(function () {
 
             if(!slideObj.clicked) { // > check user click on nextBtn
+                clearTimeout(timeOut)
                 slideObj.clicked = true
                 slideObj.move = slideObj.move == (slideObj.itemsLength - 1) ? slideObj.itemsLength - 1 : slideObj.move + 1
                 slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
-                setTimeout(function(){ slideObj.clicked = false }, 505)
-            }
+                setTimeout(function(){ 
+                    slideObj.clicked = false
+                    if(options.autoPlay){
+                        autoplay()
+                    }
+                }, 505)}
 
         })
 
@@ -55,11 +61,16 @@
         slideObj.prevBtn.click(function () {
 
             if(!slideObj.clicked) { // > check user click on prevBtn
+                clearTimeout(timeOut)
                 slideObj.clicked = true
                 slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
                 slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
-                setTimeout(function(){ slideObj.clicked = false }, 505)
-            }
+                setTimeout(function(){ 
+                    slideObj.clicked = false
+                    if(options.autoPlay){
+                        autoplay()
+                    }
+                }, 505)}
 
         })
 
@@ -93,6 +104,18 @@
                 slideObj.sliderBanner.css('margin-left', (e.pageX - slideObj.pageX) + 'px')
             }
         })
+
+        // autoplay Slider
+        var timeOut;
+        function autoplay() {
+            timeOut = setTimeout(function(){
+                slideObj.nextBtn.trigger('click')
+                autoplay()
+            }, options.waitingTime)
+        }
+        if(options.autoPlay){
+            autoplay()
+        }
 
         $(window).on('resize', function(){
             if(!slideObj.windowResizing) {
