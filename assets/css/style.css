@@ -395,6 +395,21 @@ input:focus, textarea:focus {
   left: 8%;
 }
 
+@media only screen and (max-width: 767px) {
+  .main-slider .slider__item .ratio-inner .content {
+    top: 15%;
+    left: 5%;
+  }
+  .main-slider .slider__item .ratio-inner .content .slider__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .main-slider .slider__controllers {
+    bottom: 20px;
+    left: 5%;
+  }
+}
+
 /* ========== Contain Header style ========== */
 .black {
   color: #000;
