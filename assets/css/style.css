@@ -2,6 +2,35 @@
 Name: 			style.scss
 Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
 */
+/*
+Name: 			AllSlider.scss
+Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
+*/
+.slider {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.slider .slider__banner::after {
+  content: '';
+  width: auto;
+  display: table;
+  clear: both;
+}
+
+.slider .slider__banner .slider__item {
+  float: left;
+  width: 100%;
+}
+
+.slider .slider__controllers .icon {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
+  font-size: 28px;
+  line-height: 1;
+}
+
 .black {
   color: #000;
 }
@@ -314,6 +343,50 @@ input:focus, textarea:focus {
   }
 }
 
+/* ========== Contain Sliders style ========== */
+.black {
+  color: #000;
+}
+
+/* Responsive */
+.black {
+  color: #000;
+}
+
+/* ========== Sliders ========== */
+.main-slider .slider__item .ratio-inner {
+  position: relative;
+}
+
+.main-slider .slider__item .ratio-inner .content {
+  position: absolute;
+  left: 8%;
+  top: 30%;
+}
+
+.main-slider .slider__item .ratio-inner .content .slider__title {
+  font-size: 26px;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  margin: 0 0 50px;
+}
+
+.main-slider .slider__item .ratio-inner .content .btn__slider {
+  color: #7e6f5c;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.main-slider .slider__item .ratio-inner .content .btn__slider:hover {
+  text-decoration: underline;
+}
+
+.main-slider .slider__controllers {
+  position: absolute;
+  bottom: 30px;
+  left: 8%;
+}
+
 /* ========== Contain Header style ========== */
 .black {
   color: #000;
@@ -420,7 +493,7 @@ input:focus, textarea:focus {
   display: flex;
   position: absolute;
   align-items: center;
-  right: 20%;
+  right: 13%;
 }
 
 .main-header .header__right__side .header__signin-btn,

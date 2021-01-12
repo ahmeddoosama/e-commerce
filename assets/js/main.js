@@ -50,5 +50,5 @@ $(document).on('click', function(event){
 $(document).on('click', '.category-slider-btn', function(){
     $('.category-sidebar').addClass('active').parents('body').addClass('sidebar-opened')
 })
-
+$('.slider').slider();
 });
