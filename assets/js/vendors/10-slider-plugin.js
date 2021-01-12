@@ -40,10 +40,9 @@
 
 
         // Next Button Slider Function
-        slideObj.nextBtn.click(function () {
+        function nextBtnFn() {
 
             if(!slideObj.clicked) { // > check user click on nextBtn
-                clearTimeout(timeOut)
                 slideObj.clicked = true
                 slideObj.move = slideObj.move == (slideObj.itemsLength - 1) ? slideObj.itemsLength - 1 : slideObj.move + 1
                 slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
@@ -54,23 +53,35 @@
                     }
                 }, 505)}
 
-        })
+                if(slideObj.move == (slideObj.itemsLength - 1)){
+                    slideObj.nextBtn.addClass('disabled')
+                }else {
+                    $this.find('.slider__controllers .icon').removeClass('disabled')
+                }
+
+        }
+
+        slideObj.nextBtn.click(nextBtnFn)
 
         // Previous Button Slider Function
         slideObj.prevBtn.click(function () {
 
             if(!slideObj.clicked) { // > check user click on prevBtn
-                clearTimeout(timeOut)
                 slideObj.clicked = true
                 slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
                 slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
-                setTimeout(function(){ 
+                setTimeout(function(){
                     slideObj.clicked = false
                     if(options.autoPlay){
                         autoplay()
                     }
-                }, 505)}
-
+                }, 505)
+                if(slideObj.move <= 0){
+                    slideObj.prevBtn.addClass('disabled')
+                }else {
+                    $this.find('.slider__controllers .icon').removeClass('disabled')
+                }
+            }
         })
 
         // Move slide by mouse
@@ -110,8 +121,9 @@
         // autoplay Slider
         var timeOut;
         function autoplay() {
+            clearTimeout(timeOut)
             timeOut = setTimeout(function(){
-                slideObj.nextBtn.trigger('click')
+                nextBtnFn()
                 autoplay()
             }, options.waitingTime)
         }

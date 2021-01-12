@@ -35,6 +35,11 @@ Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
   line-height: 1;
 }
 
+.slider .slider__controllers .icon.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .black {
   color: #000;
 }
