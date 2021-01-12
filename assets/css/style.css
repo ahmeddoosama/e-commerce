@@ -11,6 +11,10 @@ Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
   overflow-x: hidden;
 }
 
+.slider .slider__banner {
+  transition: transform 0.5s;
+}
+
 .slider .slider__banner::after {
   content: '';
   width: auto;

@@ -1,7 +1,8 @@
-(function($){
+(function ($) {
 
-    $.fn.slider = function(options) {
+    $.fn.slider = function (options) {
 
+        // Default Options
         options = $.extend({
             slidesToShow: 1,
             waitingTime: 3000,
@@ -9,6 +10,9 @@
             dots: false
         }, options)
 
+        /**
+            > Variables
+        **/
         let $this = $(this)
 
         let slideObj = {
@@ -20,24 +24,24 @@
             move: 0
         }
 
-        slideObj.sliderItem.width( parseInt( slideObj.sliderBanner.width() / options.slidesToShow ) );
+        // Calc Slider Width item to show
+        slideObj.sliderItem.width(parseInt(slideObj.sliderBanner.width() / options.slidesToShow))
 
-        slideObj.sliderBanner.width( slideObj.itemsLength * slideObj.sliderItem.outerWidth() )
+        slideObj.sliderBanner.width(slideObj.itemsLength * slideObj.sliderItem.outerWidth())
 
-
-        slideObj.nextBtn.click(function(){
+        // Next Button Slider Function
+        slideObj.nextBtn.click(function () {
             slideObj.move = slideObj.move == (slideObj.itemsLength - 1) ? slideObj.itemsLength - 1 : slideObj.move + 1
             slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
         })
 
-        slideObj.prevBtn.click(function(){
+        // Previous Button Slider Function
+        slideObj.prevBtn.click(function () {
             slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
             slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
         })
 
-
-
-
+        // return
         return this
     }
-}( jQuery ))
+}(jQuery))
