@@ -21,7 +21,8 @@
             itemsLength: $this.find('.slider__item').length,
             nextBtn: $this.find('.next'),
             prevBtn: $this.find('.prev'),
-            move: 0
+            move: 0,
+            clicked: false, 
         }
 
         // Calc Slider Width item to show
@@ -31,14 +32,26 @@
 
         // Next Button Slider Function
         slideObj.nextBtn.click(function () {
-            slideObj.move = slideObj.move == (slideObj.itemsLength - 1) ? slideObj.itemsLength - 1 : slideObj.move + 1
-            slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+
+            if(!slideObj.clicked) {
+                slideObj.clicked = true
+                slideObj.move = slideObj.move == (slideObj.itemsLength - 1) ? slideObj.itemsLength - 1 : slideObj.move + 1
+                slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+                setTimeout(function(){ slideObj.clicked = false }, 505)
+            }
+
         })
 
         // Previous Button Slider Function
         slideObj.prevBtn.click(function () {
-            slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
-            slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+
+            if(!slideObj.clicked) {
+                slideObj.clicked = true
+                slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
+                slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+                setTimeout(function(){ slideObj.clicked = false }, 505)
+            }
+
         })
 
         // return
