@@ -23,7 +23,9 @@
             prevBtn: $this.find('.prev'),
             move: 0,
             clicked: false,
-            windowResizing: false
+            windowResizing: false,
+            mousedown: false,
+            pageX: 0
         }
 
         // Calc Slider Width item to show
@@ -59,6 +61,37 @@
                 setTimeout(function(){ slideObj.clicked = false }, 505)
             }
 
+        })
+
+        // Move slide by mouse
+
+        $this.on('mousedown', function(e){
+            e.preventDefault()
+            slideObj.mousedown = true
+            slideObj.pageX = e.pageX
+            // console.log(slideObj.mousedown)
+        })
+
+        $(document).on('mouseup', function(e){
+            e.preventDefault()
+            if(slideObj.mousedown) {
+                slideObj.mousedown = false
+                if(e.pageX - slideObj.pageX > 100) {
+                    slideObj.prevBtn.trigger('click')
+                }else if (e.pageX - slideObj.pageX < -100) {
+                    slideObj.nextBtn.trigger('click')
+                }
+                // console.log(slideObj.mousedown)
+                slideObj.sliderBanner.css('margin-left', '0px')
+            }
+        })
+
+        $(document).on('mousemove', function(e){
+            e.preventDefault()
+            if(slideObj.mousedown) {
+                // console.log('move')
+                slideObj.sliderBanner.css('margin-left', (e.pageX - slideObj.pageX) + 'px')
+            }
         })
 
         $(window).on('resize', function(){
