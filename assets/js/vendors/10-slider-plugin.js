@@ -24,7 +24,6 @@
             prevBtn: $this.find('.prev'),
             move: 0,
             clicked: false,
-            windowResizing: false,
             mousedown: false,
             pageX: 0
         }
@@ -120,12 +119,10 @@
             autoplay()
         }
 
+        let windowResizing
         $(window).on('resize', function(){
-            if(!slideObj.windowResizing) {
-                slideObj.windowResizing = true
-                resizing()
-                setTimeout(function(){slideObj.windowResizing = false}, 100)
-            }
+            clearTimeout(windowResizing)
+            windowResizing = setTimeout(resizing, 500)
         })
 
         // return
