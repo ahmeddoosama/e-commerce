@@ -385,6 +385,10 @@ input:focus, textarea:focus {
   text-decoration: underline;
 }
 
+.main-slider .slider__item .ratio-inner img {
+  width: 100%;
+}
+
 .main-slider .slider__controllers {
   position: absolute;
   bottom: 30px;
