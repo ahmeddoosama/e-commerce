@@ -80,6 +80,7 @@
             e.preventDefault()
             slideObj.mousedown = true
             slideObj.pageX = e.pageX
+            clearTimeout(timeOut)
             // console.log(slideObj.mousedown)
         })
 
@@ -91,6 +92,8 @@
                     slideObj.prevBtn.trigger('click')
                 }else if (e.pageX - slideObj.pageX < -100) {
                     slideObj.nextBtn.trigger('click')
+                }else {
+                    autoplay()
                 }
                 // console.log(slideObj.mousedown)
                 slideObj.sliderBanner.css('margin-left', '0px')
