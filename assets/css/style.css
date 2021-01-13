@@ -145,6 +145,10 @@ a:hover, a:focus {
   margin: 0;
 }
 
+.mb-30 {
+  margin: 30px;
+}
+
 .padding-0 {
   padding: 0;
 }
@@ -153,6 +157,10 @@ h1, h2, h3, h4, h5, h6 {
   font-style: "Poppins", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
+}
+
+img {
+  width: 100%;
 }
 
 /* ========== Contain Button style ========== */
@@ -390,10 +398,6 @@ input:focus, textarea:focus {
   text-decoration: underline;
 }
 
-.main-slider .slider__item .ratio-inner img {
-  width: 100%;
-}
-
 .main-slider .slider__controllers {
   position: absolute;
   bottom: 30px;
@@ -413,6 +417,43 @@ input:focus, textarea:focus {
     bottom: 20px;
     left: 5%;
   }
+}
+
+/* ========== Contain Offers Sliders style ========== */
+.black {
+  color: #000;
+}
+
+/* Responsive */
+.black {
+  color: #000;
+}
+
+/* ========== Offers Sliders ========== */
+.offers-slider .slider__item .ratio-inner {
+  position: relative;
+}
+
+.offers-slider .slider__item .ratio-inner .content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.offers-slider .slider__item .ratio-inner .content .paragraph {
+  color: #AE8C6A;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.offers-slider .slider__item .ratio-inner .content .shop-now-btn {
+  font-size: 13px;
+  text-decoration: underline;
+  color: #a4abae;
 }
 
 /* ========== Contain Header style ========== */
@@ -812,6 +853,7 @@ input:focus, textarea:focus {
 .sidebar {
   background-color: #f8f8f8;
   padding: 20px 30px;
+  height: 100%;
 }
 
 .sidebar .sidebar__header .sidebar__header__title {
