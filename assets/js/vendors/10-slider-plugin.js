@@ -5,7 +5,7 @@
         // Default Options
         options = $.extend({
             slidesToShow: 1,
-            autoPlay: true,
+            autoPlay: false,
             waitingTime: 3000,
             arrows: true,
             dots: false
@@ -15,6 +15,7 @@
             > Variables
         **/
         let $this = $(this)
+        $this.addClass('slider-plugin')
 
         let slideObj = {
             sliderBanner: $this.find('.slider__banner'),
@@ -65,6 +66,7 @@
 
         // Previous Button Slider Function
         function prevBtnFn(){
+
             if(!slideObj.clicked) { // > check user click on prevBtn
                 slideObj.clicked = true
                 slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
@@ -81,9 +83,10 @@
                     $this.find('.slider__controllers .icon').removeClass('disabled')
                 }
             }
+
         }
 
-        slideObj.nextBtn.click(prevBtnFn)
+        slideObj.prevBtn.click(prevBtnFn)
 
         // Move slide by mouse
 

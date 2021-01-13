@@ -6,28 +6,28 @@ Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
 Name: 			AllSlider.scss
 Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
 */
-.slider {
+.slider-plugin {
   position: relative;
   overflow-x: hidden;
 }
 
-.slider .slider__banner {
+.slider-plugin .slider__banner {
   transition: transform 0.5s, margin-left 0.5s ease-out;
 }
 
-.slider .slider__banner::after {
+.slider-plugin .slider__banner::after {
   content: '';
   width: auto;
   display: table;
   clear: both;
 }
 
-.slider .slider__banner .slider__item {
+.slider-plugin .slider__banner .slider__item {
   float: left;
   width: 100%;
 }
 
-.slider .slider__controllers .icon {
+.slider-plugin .slider__controllers .icon {
   display: inline-block;
   vertical-align: top;
   padding: 0 5px;
@@ -35,7 +35,7 @@ Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
   line-height: 1;
 }
 
-.slider .slider__controllers .icon.disabled {
+.slider-plugin .slider__controllers .icon.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
