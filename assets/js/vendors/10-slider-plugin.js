@@ -6,7 +6,7 @@
             // Default Options
             options = $.extend({
                 slidesToShow: 1,
-                autoPlay: true,
+                autoPlay: false,
                 waitingTime: 3000,
                 arrows: true,
                 dots: false

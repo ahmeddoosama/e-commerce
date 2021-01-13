@@ -51,4 +51,8 @@ $(document).on('click', '.category-slider-btn', function(){
     $('.category-sidebar').addClass('active').parents('body').addClass('sidebar-opened')
 })
 $('.slider').slider();
+$('.featured-product').slider({
+    slidesToShow: 4
+});
+
 });
