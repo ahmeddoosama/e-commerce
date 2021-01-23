@@ -213,6 +213,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 30px;
 }
 
+section {
+  margin-bottom: 20px;
+}
+
 section .section__header .section__title {
   font-size: 18px;
   font-weight: 400;
@@ -220,6 +224,10 @@ section .section__header .section__title {
   text-transform: uppercase;
   margin-top: 0;
   font-family: "Oswald", sans-serif;
+}
+
+section .section__header .section-description {
+  color: #a4abae;
 }
 
 section.featured-product .section__body {
@@ -285,6 +293,43 @@ input, textarea {
 
 input:focus, textarea:focus {
   outline: none;
+}
+
+.form-input {
+  margin-bottom: 10px;
+}
+
+.form-input:last-child {
+  margin-bottom: 0;
+}
+
+.form-input input {
+  width: 100%;
+  border: 1px solid #eee;
+}
+
+.form-input input.submit-btn.line {
+  background-color: transparent;
+  border: 1px solid #DC9831;
+  color: #DC9831;
+}
+
+.form-input input.submit-btn.line:hover {
+  color: #FFF;
+  background-color: #DC9831;
+}
+
+.form-input.icon-right {
+  position: relative;
+}
+
+.form-input.icon-right .icon {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  font-size: 16px;
+  z-index: 1;
+  color: #333;
 }
 
 /* ========== Contain Accordion style ========== */
