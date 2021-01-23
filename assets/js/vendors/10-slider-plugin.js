@@ -33,9 +33,9 @@
             // Calc Slider Width item to show
             function resizing() {
 
-                slideObj.sliderItem.width(parseInt($this.width() / options.slidesToShow))
-                slideObj.sliderBanner.width(slideObj.itemsLength * slideObj.sliderItem.outerWidth())
-                slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+                slideObj.sliderItem.outerWidth(parseInt($this.outerWidth() / options.slidesToShow))
+                slideObj.sliderBanner.outerWidth(slideObj.itemsLength * slideObj.sliderItem.outerWidth())
+                slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
 
                 // console.log('resize')
             }
@@ -46,9 +46,10 @@
             function nextBtnFn() {
 
                 if (!slideObj.clicked) { // > check user click on nextBtn
-                    slideObj.clicked = true
-                    slideObj.move = slideObj.move == (slideObj.itemsLength - 1) ? slideObj.itemsLength - 1 : slideObj.move + 1
-                    slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+                    slideObj.clicked = true 
+                    var lastSlide = ((slideObj.itemsLength - 1) - (options.slidesToShow - 1))
+                    slideObj.move = slideObj.move == lastSlide ? lastSlide : slideObj.move + 1
+                    slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
                     setTimeout(function () {
                         slideObj.clicked = false
                         if (options.autoPlay) {
@@ -57,7 +58,7 @@
                     }, 505)
                 }
 
-                if (slideObj.move == (slideObj.itemsLength - 1)) {
+                if (slideObj.move == lastSlide) {
                     slideObj.nextBtn.addClass('disabled')
                 } else {
                     $this.find('.slider__controllers .icon').removeClass('disabled')
@@ -73,7 +74,7 @@
                 if (!slideObj.clicked) { // > check user click on prevBtn
                     slideObj.clicked = true
                     slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
-                    slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.width()) + 'px)')
+                    slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
                     setTimeout(function () {
                         slideObj.clicked = false
                         if (options.autoPlay) {
