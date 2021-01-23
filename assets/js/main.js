@@ -51,8 +51,22 @@ $(document).on('click', '.category-slider-btn', function(){
     $('.category-sidebar').addClass('active').parents('body').addClass('sidebar-opened')
 })
 $('.slider').slider();
-$('.featured-product').slider({
-    slidesToShow: 4
+$('.featured-product-slider').slider({
+    slidesToShow: 4,
+    responsive: [
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 450,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+    ]
 });
 
 });

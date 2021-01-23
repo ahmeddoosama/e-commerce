@@ -4,12 +4,13 @@
 
         return this.each(function () {
             // Default Options
-            options = $.extend({
+            var sliderOptions = $.extend({
                 slidesToShow: 1,
                 autoPlay: false,
                 waitingTime: 3000,
                 arrows: true,
-                dots: false
+                dots: false,
+                responsive: false
             }, options)
 
             /**
@@ -30,10 +31,28 @@
                 pageX: 0
             }
 
+            var responsiveScreenFound = false
+            // Responsive Function
+            function responsiveFn() {
+                if(sliderOptions.responsive){
+                    $.each(sliderOptions.responsive, function(index, item){
+                        if($(window).width() <= item.breakpoint){
+                            $.extend(sliderOptions, item.settings)
+                            responsiveScreenFound = true
+                        }else if(!responsiveScreenFound){
+                            $.extend(sliderOptions, options)
+                        }
+                    })
+                    responsiveScreenFound = false
+                }
+            }responsiveFn()
+
             // Calc Slider Width item to show
             function resizing() {
 
-                slideObj.sliderItem.outerWidth(parseInt($this.outerWidth() / options.slidesToShow))
+                responsiveFn()
+
+                slideObj.sliderItem.outerWidth(parseInt($this.outerWidth() / sliderOptions.slidesToShow))
                 slideObj.sliderBanner.outerWidth(slideObj.itemsLength * slideObj.sliderItem.outerWidth())
                 slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
 
@@ -47,12 +66,12 @@
 
                 if (!slideObj.clicked) { // > check user click on nextBtn
                     slideObj.clicked = true 
-                    var lastSlide = ((slideObj.itemsLength - 1) - (options.slidesToShow - 1))
+                    var lastSlide = ((slideObj.itemsLength - 1) - (sliderOptions.slidesToShow - 1))
                     slideObj.move = slideObj.move == lastSlide ? lastSlide : slideObj.move + 1
                     slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
                     setTimeout(function () {
                         slideObj.clicked = false
-                        if (options.autoPlay) {
+                        if (sliderOptions.autoPlay) {
                             autoplay()
                         }
                     }, 505)
@@ -77,7 +96,7 @@
                     slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
                     setTimeout(function () {
                         slideObj.clicked = false
-                        if (options.autoPlay) {
+                        if (sliderOptions.autoPlay) {
                             autoplay()
                         }
                     }, 505)
@@ -134,9 +153,9 @@
                 timeOut = setTimeout(function () {
                     nextBtnFn()
                     autoplay()
-                }, options.waitingTime)
+                }, sliderOptions.waitingTime)
             }
-            if (options.autoPlay) {
+            if (sliderOptions.autoPlay) {
                 autoplay()
             }
 

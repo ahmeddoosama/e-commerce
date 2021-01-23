@@ -7,7 +7,6 @@ Name: 			AllSlider.scss
 Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
 */
 .slider-plugin {
-  position: relative;
   overflow-x: hidden;
 }
 
@@ -214,10 +213,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 30px;
 }
 
-.section .section__header .section__title {
+section .section__header .section__title {
   font-size: 18px;
   font-weight: 400;
   color: #000;
+  text-transform: uppercase;
+  margin-top: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+section.featured-product .section__body {
+  padding: 10px 0;
 }
 
 /* ========== Contain Button style ========== */
@@ -428,6 +434,10 @@ input:focus, textarea:focus {
 }
 
 /* ========== Sliders ========== */
+.main-slider.slider-plugin {
+  position: relative;
+}
+
 .main-slider .slider__item .ratio-inner .content {
   position: absolute;
   left: 8%;
@@ -553,11 +563,21 @@ input:focus, textarea:focus {
 }
 
 .featured-product {
+  position: relative;
+}
+
+.featured-product .featured-product-slider {
   overflow-y: hidden;
 }
 
-.featured-product .slider__item {
+.featured-product .featured-product-slider .slider__item {
   padding: 0 10px;
+}
+
+.featured-product .featured-product-slider .slider__controllers {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /* ========== Contain Header style ========== */
