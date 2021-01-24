@@ -621,6 +621,44 @@ input:focus, textarea:focus {
   color: #a4abae;
 }
 
+/* ========== Contain testimonials slider style ========== */
+.black {
+  color: #000;
+}
+
+/* Responsive */
+.black {
+  color: #000;
+}
+
+/* ========== testimonials slider ========== */
+.testimonial {
+  background-color: #f8f8f8;
+}
+
+.testimonial .testimonials-slider .testimonials-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.testimonial .testimonials-slider .testimonials-card .user-img {
+  width: 60px;
+  margin: 0 auto 15px;
+}
+
+.testimonial .testimonials-slider .testimonials-card .user-name {
+  margin-bottom: 5px;
+}
+
+.testimonial .testimonials-slider .testimonials-card .user-job-title {
+  margin-bottom: 20px;
+}
+
+.testimonial .testimonials-slider .testimonials-card .paragraph {
+  font-size: 14px;
+  color: #a4abae;
+}
+
 /* ========== Contain Product Card style ========== */
 .black {
   color: #000;
