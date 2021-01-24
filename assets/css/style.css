@@ -214,6 +214,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 120%;
 }
 
+.small-theme .img-ratio .ratio.cart-item {
+  padding-top: 89.6%;
+}
+
 .img-ratio .ratio.main-slider-ratio {
   padding-top: 53.7%;
 }
@@ -332,6 +336,45 @@ section.featured-product .section__body {
   .collection .collection__img {
     padding-left: 0;
   }
+}
+
+@media (min-width: 600px) {
+  .right-side {
+    display: flex;
+    justify-content: space-between;
+  }
+  .sellers {
+    width: 45%;
+  }
+}
+
+.sellers .product__card {
+  margin-bottom: 15px;
+}
+
+.sellers .product__card:first-child {
+  margin-top: 15px;
+}
+
+.sellers .product__card .product__card__img {
+  width: 97px;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #E6E6E6;
+}
+
+.sellers .product__card .product__card__content {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 10px;
+}
+
+.sellers .product__card .product__card__content .product__card__title {
+  margin-bottom: 5px;
+}
+
+.sellers .product__card .product__card__content .product__card__price {
+  color: #a4abae;
 }
 
 /* ========== Contain Button style ========== */
