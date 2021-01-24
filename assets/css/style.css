@@ -686,6 +686,10 @@ input:focus, textarea:focus {
   margin: 0 auto 15px;
 }
 
+.testimonial .testimonials-slider .testimonials-card .user-img img {
+  border-radius: 50%;
+}
+
 .testimonial .testimonials-slider .testimonials-card .user-name {
   margin-bottom: 5px;
   font-weight: 500;
