@@ -68,5 +68,8 @@ $('.featured-product-slider').slider({
         }
     ]
 });
+$('.testimonials-slider').slider({
+    dots: true
+});
 
 });
