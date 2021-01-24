@@ -800,22 +800,30 @@ input:focus, textarea:focus {
   margin-bottom: 5px;
 }
 
-.featured-product {
+.featured-product, .most-wanted-section {
   position: relative;
 }
 
-.featured-product .featured-product-slider {
+.featured-product .featured-product-slider, .most-wanted-section .featured-product-slider {
   overflow-y: hidden;
 }
 
-.featured-product .featured-product-slider .slider__item {
+.featured-product .featured-product-slider .slider__item, .most-wanted-section .featured-product-slider .slider__item {
   padding: 0 10px;
 }
 
-.featured-product .featured-product-slider .slider__controllers {
+.featured-product .slider__controllers, .most-wanted-section .slider__controllers {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.most-wanted-section .section__body {
+  margin-top: 15px;
+}
+
+.most-wanted-section .section__body img {
+  width: 100%;
 }
 
 /* ========== Contain Header style ========== */
