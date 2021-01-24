@@ -10,7 +10,8 @@
                 waitingTime: 3000,
                 arrows: true,
                 dots: false,
-                responsive: false
+                responsive: false,
+                mouseDrag: true
             }, options)
 
             /**
@@ -69,6 +70,7 @@
                     var lastSlide = ((slideObj.itemsLength - 1) - (sliderOptions.slidesToShow - 1))
                     slideObj.move = slideObj.move == lastSlide ? lastSlide : slideObj.move + 1
                     slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
+                    activeDots(slideObj.move)
                     setTimeout(function () {
                         slideObj.clicked = false
                         if (sliderOptions.autoPlay) {
@@ -94,6 +96,7 @@
                     slideObj.clicked = true
                     slideObj.move = slideObj.move <= 0 ? 0 : slideObj.move - 1
                     slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
+                    activeDots(slideObj.move)
                     setTimeout(function () {
                         slideObj.clicked = false
                         if (sliderOptions.autoPlay) {
@@ -112,38 +115,72 @@
             slideObj.prevBtn.click(prevBtnFn)
 
             // Move slide by mouse
-
-            $this.on('mousedown', function (e) {
-                e.preventDefault()
-                slideObj.mousedown = true
-                slideObj.pageX = e.pageX
-                clearTimeout(timeOut)
-                // console.log(slideObj.mousedown)
-            })
-
-            $(document).on('mouseup', function (e) {
-                e.preventDefault()
-                if (slideObj.mousedown) {
-                    slideObj.mousedown = false
-                    if (e.pageX - slideObj.pageX > 100) {
-                        prevBtnFn()
-                    } else if (e.pageX - slideObj.pageX < -100) {
-                        nextBtnFn()
-                    } else {
-                        autoplay()
-                    }
+            function mouseDrag() {
+                $this.on('mousedown', function (e) {
+                    e.preventDefault()
+                    slideObj.mousedown = true
+                    slideObj.pageX = e.pageX
+                    clearTimeout(timeOut)
                     // console.log(slideObj.mousedown)
-                    slideObj.sliderBanner.css('margin-left', '0px')
-                }
-            })
+                })
+    
+                $(document).on('mouseup', function (e) {
+                    e.preventDefault()
+                    if (slideObj.mousedown) {
+                        slideObj.mousedown = false
+                        if (e.pageX - slideObj.pageX > 100) {
+                            prevBtnFn()
+                        } else if (e.pageX - slideObj.pageX < -100) {
+                            nextBtnFn()
+                        } else {
+                            autoplay()
+                        }
+                        // console.log(slideObj.mousedown)
+                        slideObj.sliderBanner.css('margin-left', '0px')
+                    }
+                })
+    
+                $(document).on('mousemove', function (e) {
+                    e.preventDefault()
+                    if (slideObj.mousedown) {
+                        // console.log('move')
+                        slideObj.sliderBanner.css('margin-left', (e.pageX - slideObj.pageX) + 'px')
+                    }
+                })
+            }
+            if(sliderOptions.mouseDrag) {
+                mouseDrag();
+            }
 
-            $(document).on('mousemove', function (e) {
-                e.preventDefault()
-                if (slideObj.mousedown) {
-                    // console.log('move')
-                    slideObj.sliderBanner.css('margin-left', (e.pageX - slideObj.pageX) + 'px')
+            // Move slide by dots
+
+            function activeDots(index) {
+                $this.find('.slider-dots .dot').removeClass('active').eq(index).addClass('active')
+            }
+
+            function drawDots() {
+                let slidesNum = slideObj.itemsLength / sliderOptions.slidesToShow
+                liArray = []
+                for(let i = 1; i <= slidesNum; i++){
+                    liArray.push('<li class="dot '+(i == 1? "active": "")+'"></li>')
                 }
-            })
+                $this.append('<ul class="slider-dots">'+liArray.join('')+'</ul>')
+
+                $this.on('click', '.slider-dots .dot', function(){
+                    slideObj.move = $(this).index()
+                    activeDots(slideObj.move)
+
+                    slideObj.sliderBanner.css('transform', 'translateX(' + -(slideObj.move * slideObj.sliderItem.outerWidth()) + 'px)')
+
+                    if(sliderOptions.autoPlay) {
+                        autoplay();
+                    }
+                })
+            }
+            if(sliderOptions.dots) {
+                drawDots()
+            }
+
 
             // autoplay Slider
             var timeOut;

@@ -39,6 +39,45 @@ Written by: 	Ahmed Osama Bedawy - (https://github.com/ahmeddoosama)
   cursor: not-allowed;
 }
 
+.slider-plugin .slider-dots {
+  display: block;
+  text-align: center;
+}
+
+.slider-plugin .slider-dots .dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #989898;
+  padding: 1px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.slider-plugin .slider-dots .dot:last-child {
+  margin-right: 0;
+}
+
+.slider-plugin .slider-dots .dot::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  vertical-align: top;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.slider-plugin .slider-dots .dot.active, .slider-plugin .slider-dots .dot:hover {
+  border-color: #DC9831;
+}
+
+.slider-plugin .slider-dots .dot.active::before, .slider-plugin .slider-dots .dot:hover::before {
+  background-color: #DC9831;
+}
+
 .black {
   color: #000;
 }
@@ -634,6 +673,7 @@ input:focus, textarea:focus {
 /* ========== testimonials slider ========== */
 .testimonial {
   background-color: #f8f8f8;
+  padding-bottom: 15px;
 }
 
 .testimonial .testimonials-slider .testimonials-card {
