@@ -1367,7 +1367,6 @@ input:focus, textarea:focus {
 
 /* ========== Footer ========== */
 footer {
-  padding-bottom: 30px;
   background-color: #151515;
 }
 
@@ -1458,4 +1457,27 @@ footer .newsletter-col .social-media .item a:hover {
   border-color: #FFF;
   background-color: #FFF;
   color: #333;
+}
+
+footer .copyrights-row {
+  border-top: 1px solid #313131;
+  padding: 30px 0;
+  color: #5a5a5a;
+}
+
+footer .copyrights-row .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  footer .copyrights-row .container {
+    display: block;
+    text-align: center;
+  }
+}
+
+footer .copyrights-row .supported-payment img {
+  display: inline-block;
+  max-width: 100%;
 }
